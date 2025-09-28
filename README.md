@@ -56,4 +56,4 @@ This will:
 
 ## 👤 Author
 Mohammad Yahya Ibrahim
-Partner Technical Specialist | IBM Maximo & OpenShift Automation
+yahyaibrahim01@gmail.com

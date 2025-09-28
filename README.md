@@ -9,7 +9,7 @@ It includes:
 
 ## 📂 Files
 
-### 1. `script_image_registry.sh`
+### 1. script_image_registry.sh
 This shell script creates the required PVC for the OpenShift internal image registry.  
 
 **Usage:**
@@ -23,7 +23,7 @@ chmod +x script_image_registry.sh
 ./script_image_registry.sh
 ```
 
-### 2. `script_mas_auto_install.exp`
+### 2. script_mas_auto_install.exp
 An expect script that automatically provides answers to the interactive mas install prompts.
 This is useful for unattended or repeatable installations.
 

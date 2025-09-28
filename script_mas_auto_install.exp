@@ -1,0 +1,102 @@
+#!/usr/bin/expect -f
+set timeout -1
+
+# Start the MAS install command
+spawn mas install
+
+expect "*Proceed with this cluster?*"                { send "y\r" }
+expect "*Show advanced installation options?*"       { send "y\r" }
+expect "*Select catalog*"                            { send "v9-250902-amd64\r" }
+expect "*Select release*"                            { send "9.1\r" }
+expect "*Do you accept the license terms?*"          { send "y\r" }
+expect "*Use the auto-detected storage classes?*"    { send "y\r" }
+expect "*SLS Mode*"                                  { send "\r" }
+expect "*License file*"                              { send "[PATH TO MAS LICENSE]\r" }
+expect "*Contact e-mail address*"                    { send "maxadmin@ibm.com\r" }
+expect "*Contact first name*"                        { send "maxadmin\r" }
+expect "*Contact last name*"                         { send "mas\r" }
+expect "*IBM Data Reporter Operator (DRO) Namespace*" { send "redhat-marketplace\r" }
+expect "*IBM entitlement key*"                       { send "[YOUR ENTITLEMENT KEY]\r" }
+expect "*Instance ID*"                               { send "mas910\r" }
+expect "*Workspace ID*"                              { send "masdev\r" }
+expect "*Workspace name*"                            { send "masdev\r" }
+expect "*Operational Mode*"                          { send "\b2\r" }
+expect "*Trust default CAs?*"                        { send "y\r" }
+expect "*Cluster ingress certificate secret name*"   { send "\r" }
+expect "*Configure domain & certificate management?*" { send "n\r" }
+expect "*Configure SSO properties?*"                 { send "n\r" }
+expect "*Allow special characters*"                  { send "y\r" }
+expect "*Enable Guided Tour?*"                       { send "n\r" }
+expect "*Install IoT?*"                              { send "y\r" }
+expect "*Install Monitor?*"                          { send "y\r" }
+expect "*Install Manage?*"                           { send "y\r" }
+expect "*Install Predict?*"                          { send "y\r" }
+expect "*Install Assist?*"                           { send "n\r" }
+expect "*Install Optimizer?*"                        { send "y\r" }
+expect "*Install Visual Inspection?*"                { send "n\r" }
+expect "*Install Real Estate and Facilities?*"       { send "n\r" }
+
+expect "*Select components to enable?*"              { send "y\r" }
+expect "*Asset Configuration Manager?*"              { send "n\r" }
+expect "*Aviation?*"                                 { send "n\r" }
+expect "*Civil Infrastructure?*"                     { send "n\r" }
+expect "*Envizi?*"                                   { send "n\r" }
+expect "*Health?*"                                   { send "y\r" }
+expect "*Health, Safety and Environment?*"           { send "y\r" }
+expect "*Maximo IT?*"                                { send "n\r" }
+expect "*Nuclear?*"                                  { send "n\r" }
+expect "*Oil & Gas?*"                                { send "n\r" }
+expect "*Connector for Oracle Applications?*"        { send "n\r" }
+expect "*Connector for SAP Application?*"            { send "n\r" }
+expect "*Service Provider?*"                         { send "y\r" }
+expect "*Spatial?*"                                  { send "n\r" }
+expect "*Strategize?*"                               { send "n\r" }
+expect "*Transportation?*"                           { send "n\r" }
+expect "*Tririga?*"                                  { send "n\r" }
+expect "*Utilities?*"                                { send "n\r" }
+expect "*Workday Applications?*"                     { send "n\r" }
+expect "*AIP?*"                                      { send "n\r" }
+expect "*Vegetation Management?*"                    { send "n\r" }
+
+expect "*Select a server bundle configuration*"      { send "1\r" }
+expect "*Customize database settings?*"              { send "n\r" }
+expect "*Include customization archive?*"            { send "n\r" }
+expect "*Configure Additional Settings?*"            { send "y\r" }
+expect "*Create demo data?*"                         { send "y\r" }
+expect "*Manage server timezone*"                    { send "\r" }
+expect "*Base language*"                             { send "EN\r" }
+expect "*Secondary language*"                        { send "EN\r" }
+expect "*Plan*"                                      { send "\r" }
+expect "*Install IBM SPSS Statistics?*"              { send "n\r" }
+
+expect "*Create MongoDb cluster*"                    { send "y\r" }
+expect "*MongoDb namespace*"                         { send "\r" }
+
+expect "*Create system Db2 instance*"                { send "y\r" }
+expect "*Re-use System Db2 instance*"                { send "y\r" }
+expect "*Install namespace*"                         { send "\r" }
+
+expect "*Configure node affinity?*"                  { send "n\r" }
+expect "*Configure node tolerations?*"               { send "n\r" }
+
+expect "*Customize CPU and memory request/limit?*"   { send "y\r" }
+expect "*CPU Request*"                               { send "\r" }
+expect "*CPU Limit*"                                 { send "\r" }
+expect "*Memory Request*"                            { send "\b\b\b\b\b\b\b\b32Gi\r" }
+expect "*Memory Limit*"                              { send "\b\b\b\b\b\b\b\b\b\b64Gi\r" }
+
+expect "*Customize storage capacity?*"               { send "n\r" }
+
+expect "*Create system Kafka instance*"              { send "y\r" }
+expect "*Select Kafka provider*"                     { send "1\r" }
+expect "*Strimzi namespace*"                         { send "\r" }
+expect "*Kafka version*"                             { send "\r" }
+
+expect "*Install namespace*"                         { send "\r" }
+expect "*Grafana storage size*"                      { send "\r" }
+
+expect "*Configure IBM Turbonomic integration?*"     { send "n\r" }
+expect "*Use additional configurations?*"            { send "n\r" }
+expect "*Use pod templates?*"                        { send "n\r" }
+
+interact
